@@ -9,4 +9,4 @@ pages:
     paths:
       - public # La carpeta donde se generan los archivos de construcción
   only:
-    - main # Despliega solo desde la rama master
+    - master # Despliega solo desde la rama master
