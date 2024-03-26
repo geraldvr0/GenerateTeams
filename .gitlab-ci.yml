@@ -10,3 +10,5 @@ pages:
       - dist/ # La carpeta donde se generan los archivos de construcción
   only:
     - master # Despliega solo desde la rama master
+  publish: 
+      dir: dist # Carpeta de publicación
