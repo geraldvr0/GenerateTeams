@@ -1,0 +1,12 @@
+image: node:lts
+
+pages:
+  stage: deploy
+  script:
+    - npm install # Instala las dependencias si es necesario
+    - npm run build # Construye tu aplicación Angular
+  artifacts:
+    paths:
+      - public # La carpeta donde se generan los archivos de construcción
+  only:
+    - main # Despliega solo desde la rama master
