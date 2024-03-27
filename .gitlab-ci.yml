@@ -7,6 +7,6 @@ pages:
     - npm run build # Construye tu aplicación Angular
   artifacts:
     paths:
-      - dist/ # La carpeta donde se generan los archivos de construcción
+      - public/ # La carpeta donde se generan los archivos de construcción
   only:
     - master # Despliega solo desde la rama master
