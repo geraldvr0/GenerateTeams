@@ -8,11 +8,13 @@ import html2canvas from 'html2canvas';
 })
 export class AppComponent {
   title = 'caso';
+  titulo: string='';
   cantidadGrupos: number=0;
   listaNombres: string='';
   datos: number = 0; 
   integrantes: number = 0;
   grupos: string[][] = [];
+  view:boolean=false;
   @ViewChild('content') content!: ElementRef;
 
   actualizarNombresPorLinea() {
@@ -30,20 +32,16 @@ export class AppComponent {
       link.click();
     });
   }
-  
-  // crearGrupos() {
-  //   // Dividir el texto del textarea en líneas
-  //   const nombresArray = this.listaNombres.split('\n').map(line => line.trim());
-  //   console.log(nombresArray);
-    
-  //   // Aquí puedes hacer lo que quieras con los datos, como agregarlos a un array
-  //   // O enviarlos a un servicio para procesamiento adicional
-  // }
-
+  clear() {
+    this.view=false;
+    this.titulo='';
+    this.cantidadGrupos=0;
+    this.listaNombres='';
+  }
   crearGrupos() {
     this.grupos = []; // Reinicia los grupos
     const nombresLineas = this.listaNombres.split('\n').map(line => line.trim()).filter(line => line !== '');
-    
+    this.view=true;
     // Divide los nombres en la cantidad de grupos ingresados
     const cantidadNombresPorGrupo = Math.ceil(nombresLineas.length / this.cantidadGrupos);
 

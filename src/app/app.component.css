@@ -1,0 +1,13 @@
+/* Para pantallas pequeñas */
+@media (max-width: 640px) {
+    .container {
+      max-width: 90%;
+    }
+  }
+  
+  /* Para pantallas medianas y grandes */
+  @media (min-width: 641px) {
+    .container {
+      max-width: 80%;
+    }
+  }
