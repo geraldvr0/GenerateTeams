@@ -1,5 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import html2canvas from 'html2canvas';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,7 @@ import html2canvas from 'html2canvas';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'caso';
+  title = 'GT';
   titulo: string='';
   cantidadGrupos: number=0;
   listaNombres: string='';
@@ -16,6 +17,10 @@ export class AppComponent {
   grupos: string[][] = [];
   view:boolean=false;
   @ViewChild('content') content!: ElementRef;
+
+  constructor(private titleService: Title) {
+    this.titleService.setTitle('GT');
+  }
 
   actualizarNombresPorLinea() {
     const nombresLineas = this.listaNombres.split('\n').map(line => line.trim()).filter(line => line !== ''); // Filtra las líneas en blanco
